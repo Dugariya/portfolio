@@ -3,6 +3,7 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import About from "./components/About";
 const configs = {
   particles: {
     number: {
@@ -139,6 +140,7 @@ const App = () => {
       <div className="absolute  w-full h-full   ">
         <Header />
         <Home />
+        <About />
       </div>
     </div>
   );
