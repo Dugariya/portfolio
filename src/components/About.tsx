@@ -51,25 +51,37 @@ const About = () => {
   return (
     <div className="bg-[#00000055]  min-h-[100%] flex flex-col  ">
       <div className="p-4 mt-[70px] md:ml-[100px]">
-        <span className=" text-[#63c8ff] text-2xl font-semibold">About me</span>
+        <span className="text-[#63c8ff] text-2xl font-semibold">About me</span>
         {/* <hr className="w-[60%] my-5 bg-gray-600 text-black" /> */}
         <hr className="h-px my-4 bg-gray-400 border-0 dark:bg-gray-70 w-[60%]" />
 
         <div className="flex flex-1 flex-col">
           <div className="flex flex-col md:flex-row my-5">
-            <div className="border-0 border-blue-500 flex-1 text-white">
+            <div className=" border-0 border-blue-500 flex-1 text-white">
               About My Self
             </div>
             <div className="border-0 border-blue-500 flex-[2]">
               {" "}
               <span className="text-[18px] text-white my-3">
-                Highly motivated React Native Developer with a two year of
-                experience building and implementing mobile applications.
-                Proficient in developing user-friendly and intuitive mobile
-                applications using React Native, Redux, and other relevant
-                technologies. A quick learner with excellent problem-solving
-                skills, and the ability to work well in a team-oriented
-                environment.
+                I am a passionate React Native and React JS developer with a
+                strong commitment to crafting high-quality, performant
+                applications. With a keen eye for detail and a focus on
+                user-centric design, I pride myself on delivering solutions that
+                not only meet client expectations but exceed them
+              </span>
+            </div>
+          </div>
+
+          {/* my mission??  */}
+          <div className="flex my-5">
+            <div className="border-0 border-blue-500 flex-1 text-white">
+              MY MISSION
+            </div>
+            <div className="border-0 border-blue-500 flex-[2]">
+              <span className="text-[18px] text-white my-3">
+                To contribute to the digital world by developing polished and
+                impactful applications using React Native and React JS, making a
+                positive difference for businesses and end users alike.
               </span>
             </div>
           </div>
@@ -81,8 +93,11 @@ const About = () => {
             <div className="border-0 border-[#dddddd] flex-[2]">
               <h1 className="text-white ">What I can do</h1>
               <div className="flex-1  p-2 flex flex-wrap gap-10 items-center ">
-                {skill_option.map((item) => (
-                  <div className="shadow-lg rounded-xl hover:scale-110 ease-in duration-300 bg-[#04375250] my-2 flex items-center gap-5 p-4 min-w-[210px] min-h-[100px] shadow-[#63c8ff] ">
+                {skill_option.map((item, _i) => (
+                  <div
+                    key={_i}
+                    className="shadow-lg rounded-xl hover:scale-110 ease-in duration-300 bg-[#04375250] my-2 flex items-center gap-5 p-4 min-w-[210px] min-h-[100px] shadow-[#63c8ff] "
+                  >
                     <img
                       alt="/"
                       loading="lazy"
@@ -93,11 +108,23 @@ const About = () => {
                     <div className="text-white font-semibold">{item.title}</div>
                   </div>
                 ))}
+                <div className="text-white">
+                  <ul className="list-disc">
+                    <li>Proficient in React Native and React JS development</li>
+                    <li>Cross-platform mobile application development</li>
+                    <li>Front-end web development with React JS</li>
+                    <li>
+                      UI/UX design principles for intuitive and engaging
+                      interfaces
+                    </li>
+                    <li>Responsive web design and development</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
           {/* services */}
-          {/* <div className="flex my-5">
+          <div className="flex my-5">
             <div className="border-0 border-blue-500 flex-1 text-white">
               SERVICES
             </div>
@@ -112,24 +139,7 @@ const About = () => {
                 environment.
               </span>
             </div>
-          </div> */}
-          {/* Work Timline */}
-          {/* <div className="flex my-5">
-            <div className="border-0 border-blue-500 flex-1 text-white">
-              Work Timline
-            </div>
-            <div className="border-0 border-blue-500 flex-[2]">
-              <span className="text-[18px] text-white my-3">
-                Highly motivated React Native Developer with a two year of
-                experience building and implementing mobile applications.
-                Proficient in developing user-friendly and intuitive mobile
-                applications using React Native, Redux, and other relevant
-                technologies. A quick learner with excellent problem-solving
-                skills, and the ability to work well in a team-oriented
-                environment.
-              </span>
-            </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

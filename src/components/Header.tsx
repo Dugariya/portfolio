@@ -1,12 +1,17 @@
-import React, { useState } from "react";
-import { CiMenuFries } from "react-icons/ci";
-import { MdClose } from "react-icons/md";
+import React, { useEffect, useState } from "react";
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+} from "react-scroll";
 
 const header_options = [
   { title: "Home", link: "#home" },
   { title: "About", link: "#about" },
-  { title: "Portfolio", link: "#portfolio" },
-  { title: "Service", link: "#service" },
+  { title: "Projects", link: "#projects" },
   { title: "Contact", link: "#contact" },
 ];
 
@@ -17,7 +22,28 @@ const Header = () => {
     setActiveTab(title);
     // You can add further logic here when a tab is clicked
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
 
+      header_options.forEach((_opt) => {
+        const element = document.querySelector(_opt.link);
+        if (element) {
+          const elementTop = element.offsetTop;
+          const elementBottom = elementTop + element.clientHeight;
+          if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+            setActiveTab(_opt.title);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <nav className="p-3 md:flex md:items-center fixed w-full z-50">
       <div className="flex justify-between items-center p-3">
@@ -72,7 +98,16 @@ const Header = () => {
             } flex-col`}
           >
             {header_options.map((_opt, _i) => (
-              <a
+              <Link
+                activeClass="active"
+                to={`${_opt.link}`}
+                smooth={true}
+                spy={true}
+                offset={50}
+                duration={500}
+                delay={700}
+                isDynamic={true}
+                hashSpy={true}
                 key={_i}
                 href={_opt.link}
                 onClick={() => handleTabClick(_opt.title)}
@@ -80,8 +115,17 @@ const Header = () => {
                   activeTab === _opt.title ? "font-bold " : ""
                 }`}
               >
+                {/* <a
+                  key={_i}
+                  href={_opt.link}
+                  onClick={() => handleTabClick(_opt.title)}
+                  className={`text-[#63c8ff] mx-1 hover:underline cursor-pointer  p-3 ${
+                    activeTab === _opt.title ? "font-bold " : ""
+                  }`}
+                > */}
                 {_opt.title}
-              </a>
+                {/* </a> */}
+              </Link>
             ))}
           </div>
         </div>
@@ -90,7 +134,14 @@ const Header = () => {
         {/* //shadow-[#73bdd2 */}
         <div className=" z-40 ">
           {header_options.map((_opt, _i) => (
-            <a
+            <Link
+              activeClass="active"
+              to={`${_opt.link}`}
+              spy={true}
+              smooth={true}
+              duration={700}
+              offset={50}
+              hashSpy={true}
               key={_i}
               href={_opt.link}
               onClick={() => handleTabClick(_opt.title)}
@@ -100,8 +151,19 @@ const Header = () => {
                   : ""
               }`}
             >
+              {/* <a
+                key={_i}
+                href={_opt.link}
+                onClick={() => handleTabClick(_opt.title)}
+                className={`text-[#63c8ff] mx-1 hover:underline cursor-pointer  p-3 rounded-2xl px-7 shadow-sm min-w-[150px]  ${
+                  activeTab === _opt.title
+                    ? "font-bold shadow-[#73bdd2] shadow-lg "
+                    : ""
+                }`}
+              > */}
               {_opt.title}
-            </a>
+              {/* </a> */}
+            </Link>
           ))}
         </div>
       </div>

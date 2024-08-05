@@ -8,7 +8,7 @@ import {
   FaMail,
   FaAngleDown,
 } from "react-icons/fa";
-
+import { Link } from "react-scroll";
 import { MdEmail } from "react-icons/md";
 
 let social_media_options = [
@@ -86,10 +86,20 @@ const Home = () => {
           team-oriented environment.
         </span> */}
         <br />
-        <div className="border-2 border-gray-500 hover:border-[#63c8ff] p-2 text-white font-light my-5 hover:cursor-pointer cursor-not-allowed opacity-50  select-none hover:bg-[#63c8ff3b]  flex items-center gap-1 focus:ring-4 transition delay-150 duration-300 ease-in-out">
-          MORE ABOUT ME
-          <FaAngleDown />
-        </div>
+        <Link
+          activeClass="active"
+          to={`#about`}
+          spy={true}
+          smooth={true}
+          duration={700}
+          offset={50}
+          hashSpy={true}
+        >
+          <div className="border-2 border-gray-500 hover:border-[#63c8ff] p-2 text-white font-light my-5 hover:cursor-pointer cursor-not-allowed opacity-50  select-none hover:bg-[#63c8ff3b]  flex items-center gap-1 focus:ring-4 transition delay-150 duration-300 ease-in-out">
+            MORE ABOUT ME
+            <FaAngleDown />
+          </div>
+        </Link>
       </div>
       <div className="border-0 border-blue-700 flex-1 flex flex-col  justify-center items-end blur-sm hover:blur-0 hover:scale-[1] scale-[.95]">
         <img
