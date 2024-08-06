@@ -52,7 +52,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
       technologies: "React Native, React-Js, blockchain, firebase",
       demoLink: "https://testnet.fxfort.io/",
       githubLink: "",
-      img: ["/fxfort.png"],
+      img: ["./assets/fxfort.png"],
     },
     {
       title: "SasPlay APP",
@@ -62,7 +62,11 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
       demoLink:
         "https://play.google.com/store/apps/details?id=com.sasplaygame&pcampaignid=web_share",
       githubLink: "https://github.com/example/repository",
-      img: ["/sasplay.jpg", "/sasplay1.jpg", "/sasplay2.jpg"],
+      img: [
+        "./assets/sasplay.jpg",
+        "./assets/sasplay1.jpg",
+        "./assets/sasplay2.jpg",
+      ],
     },
     {
       title: "E-commerce Mobile App",
@@ -71,7 +75,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
       technologies: "React Native,Expo, Redux, Firebase,",
       demoLink: "https://example.com/demo",
       githubLink: "https://github.com/example/repository",
-      img: ["/eco1.jpg", "/eco3.jpg", "/eco4.jpg"],
+      img: ["./assets/eco1.jpg", "./assets/eco3.jpg", "./assets/eco4.jpg"],
     },
     {
       title: "Free Online Plagiarism Checker for students",
@@ -80,7 +84,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
       technologies: "Next-Js, Typescript, AI, node-js",
       demoLink: "https://critique.cbtexty.com/",
       githubLink: "https://github.com/example/repository",
-      img: ["/plagicheker.png"],
+      img: ["./assets/plagicheker.png"],
     },
     // Add more project objects as needed
   ];
