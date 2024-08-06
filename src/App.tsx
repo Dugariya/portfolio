@@ -6,43 +6,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ProjectSection from "./components/ProjectSection";
-
-const configs = {
-  particles: {
-    number: {
-      value: 100,
-    },
-    color: {
-      value: "#ffffff",
-    },
-    links: {
-      enable: true,
-      distance: 200,
-    },
-    shape: {
-      type: "circle",
-    },
-    opacity: {
-      value: 1,
-    },
-    size: {
-      value: {
-        min: 4,
-        max: 6,
-      },
-    },
-    move: {
-      enable: true,
-      speed: 2,
-    },
-  },
-  background: {
-    color: "#000000",
-  },
-  poisson: {
-    enable: true,
-  },
-};
+import { Engine } from "@tsparticles/engine";
 
 const App = () => {
   const [init, setInit] = useState(false);
@@ -54,20 +18,20 @@ const App = () => {
       setInit(true);
     });
   }, []);
-  const particlesInit = useCallback(async (engine) => {
-    await loadSlim(engine);
-  }, []);
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
+  // const particlesInit = useCallback(async (engine: Engine) => {
+  //   await loadSlim(engine);
+  // }, []);
+  // const particlesLoaded = (container) => {
+  //   console.log(container);
+  // };
 
   return (
     <div className="flex flex-1 flex-col">
       {init && (
         <Particles
           id="tsparticles"
-          init={particlesInit}
-          loaded={particlesLoaded}
+          // init={particlesInit}
+          // loaded={particlesLoaded}
           options={{
             background: {
               color: {
@@ -86,7 +50,7 @@ const App = () => {
                   enable: true,
                   mode: "repulse",
                 },
-                resize: true,
+                // resize: true,
               },
               modes: {
                 push: {
@@ -122,7 +86,7 @@ const App = () => {
               number: {
                 density: {
                   enable: true,
-                  area: 800,
+                  // area: 800,
                 },
                 value: 130,
               },

@@ -1,4 +1,3 @@
-import ProgressBar from "@ramonak/react-progress-bar";
 import { Link } from "react-scroll";
 
 let skill_option = [

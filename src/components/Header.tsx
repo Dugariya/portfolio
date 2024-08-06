@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
 const header_options = [
@@ -11,10 +11,7 @@ const header_options = [
 const Header = () => {
   const [activeTab, setActiveTab] = useState("Home");
   const [open, setOpen] = useState(false);
-  const handleTabClick = (title) => {
-    setActiveTab(title);
-    // You can add further logic here when a tab is clicked
-  };
+
   const scrollHandler = () => {
     const scrollPosition = window.scrollY;
     header_options.forEach((_opt) => {

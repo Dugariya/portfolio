@@ -1,13 +1,5 @@
-import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import {
-  FaGithub,
-  FaFacebook,
-  FaLinkedin,
-  FaTwitter,
-  FaMail,
-  FaAngleDown,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaAngleDown } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { MdEmail } from "react-icons/md";
 

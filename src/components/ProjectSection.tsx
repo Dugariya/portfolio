@@ -1,6 +1,15 @@
 import React from "react";
 
-const Project = ({
+interface ProjectProps {
+  title: string;
+  description: string;
+  technologies: string;
+  demoLink: string;
+  githubLink: string;
+  img: string[];
+}
+
+const Project: React.FC<ProjectProps> = ({
   title,
   description,
   technologies,
@@ -13,7 +22,7 @@ const Project = ({
       <h2 className="text-2xl font-bold text-white mb-2">{title}</h2>
       <div className="flex  gap-4 overflow-auto">
         {img.map((_img) => (
-          <img src={`${_img}`} className="h-[300px]" />
+          <img key={_img} src={`${_img}`} className="h-[300px]" alt={_img} />
         ))}
       </div>
       <p className="text-gray-200 mb-4 min-h-[130px] my-5">{description}</p>
@@ -24,13 +33,17 @@ const Project = ({
         <a href={demoLink} className="text-blue-600 hover:underline mr-4">
           View Demo
         </a>
-        <a href={githubLink} className="text-blue-600 hover:underline"></a>
+        <a href={githubLink} className="text-blue-600 hover:underline">
+          GitHub Link
+        </a>
       </div>
     </div>
   );
 };
 
-const ProjectSection = () => {
+interface ProjectSectionProps {}
+
+const ProjectSection: React.FC<ProjectSectionProps> = () => {
   const projects = [
     {
       title: "FxFort APP",
@@ -79,7 +92,6 @@ const ProjectSection = () => {
     >
       <div className="p-4 mt-[70px] md:ml-[100px]">
         <span className="text-[#63c8ff] text-2xl font-semibold">Projects</span>
-        {/* <hr className="w-[60%] my-5 bg-gray-600 text-black" /> */}
         <hr className="h-px my-4 bg-gray-400 border-0 dark:bg-gray-70 w-[60%] " />
         <div className="flex flex-row flex-wrap justify-center md:justify-between items-center mt-10">
           {projects.map((project, index) => (
@@ -90,5 +102,4 @@ const ProjectSection = () => {
     </div>
   );
 };
-
 export default ProjectSection;

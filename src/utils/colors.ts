@@ -6,3 +6,4 @@ let color = {
   highlight_color: "#D4AF37",
   link_color: "#00BFFF",
 };
+export default color;
