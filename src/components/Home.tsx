@@ -109,9 +109,9 @@ const Home = () => {
           // src="/bg-image1.png"
           src="https://media.istockphoto.com/id/1142395943/photo/hacker-with-red-glowing-mask-behind-notebook-laptop-in-front-of-blue-source-binary-code.jpg?s=612x612&w=0&k=20&c=rJ4PWS4hWDXsdd6YRpaFQ4KtQtS7k_KFPSQZwgEW39I="
           // src="/SplashScreen.png"
-          className="h-[80%] object-contain self-center shadow-lg rounded-[20px] hover:shadow-[#8cc8e8ed] shadow-white"
+          className="w-[90%] h-[90%] object-cover self-center shadow-lg rounded-[20px] hover:shadow-[#8cc8e8ed] shadow-white"
         />
-        <div className="absolute bottom-10 md:bottom-[100px] left-[35%] right-0 text-[#012732] md:text-2xl font-bold  md:mt-[130px] mt-[50px]  blur-[.2] text-[16px]">
+        <div className="absolute border-0 w-[90%] h-[90%] self-center flex items-end justify-center pb-16 text-[#fff] md:text-2xl font-bold   blur-[.2] text-[16px]">
           mr_dugariya
         </div>
       </div>
