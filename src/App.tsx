@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import Header from "./components/Header";
@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ProjectSection from "./components/ProjectSection";
-import { Engine } from "@tsparticles/engine";
+// import { Engine } from "@tsparticles/engine";
 
 const App = () => {
   const [init, setInit] = useState(false);
