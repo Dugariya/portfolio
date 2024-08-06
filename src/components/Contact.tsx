@@ -1,8 +1,10 @@
-import React from "react";
-
+import { social_media_options } from "./Home";
 const Contact = () => {
   return (
-    <div className="bg-[#00000055]  min-h-[100%] flex flex-col  ">
+    <div
+      className="bg-[#00000055]  min-h-[100%] flex flex-col flex-1 "
+      id="contact"
+    >
       <div className="p-4 mt-[70px] md:ml-[100px]">
         <span className="text-[#63c8ff] text-2xl font-semibold">
           Contact Me
@@ -31,7 +33,7 @@ const Contact = () => {
                 </a>
               </div>
               <br />
-              &#8592;
+              <div className="invisible md:visible">&#8592;</div>
             </div>
             <div className="border-2 rounded-lg border-blue-500 shadow-xl shadow-[#8e8eff] flex flex-col flex-[2]">
               <form className=" p-6">
@@ -87,6 +89,21 @@ const Contact = () => {
                   </button>
                 </div>
               </form>
+            </div>
+            <div className=" border-blue-700 p-2  md:hidden flex items-center justify-center flex-row gap-5 bg-[#024265] my-5 mt-[80px] ">
+              <span className="text-white ">Follow Me On</span>
+              {social_media_options.map((item, i) => {
+                return (
+                  <a
+                    key={i}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.icon}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

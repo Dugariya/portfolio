@@ -11,7 +11,7 @@ import {
 import { Link } from "react-scroll";
 import { MdEmail } from "react-icons/md";
 
-let social_media_options = [
+export let social_media_options = [
   {
     icon: <FaGithub size={20} color="white" />,
     title: "github",
@@ -31,7 +31,10 @@ let social_media_options = [
 
 const Home = () => {
   return (
-    <div className="min-h-[100%] p-5 my-5 flex flex-1 md:flex-row flex-col gap-5   ">
+    <div
+      id="/"
+      className="min-h-[100%] p-5 my-5 flex flex-1 md:flex-row flex-col gap-5   "
+    >
       <div className="border-0 fixed h-[70%] mt-[80px] border-blue-700 p-2 hidden md:flex items-center justify-center flex-col gap-5 bg-[#024265]">
         {social_media_options.map((item, i) => {
           return (
@@ -88,11 +91,10 @@ const Home = () => {
         <br />
         <Link
           activeClass="active"
-          to={`#about`}
+          to={`about`}
           spy={true}
           smooth={true}
           duration={700}
-          offset={50}
           hashSpy={true}
         >
           <div className="border-2 border-gray-500 hover:border-[#63c8ff] p-2 text-white font-light my-5 hover:cursor-pointer cursor-not-allowed opacity-50  select-none hover:bg-[#63c8ff3b]  flex items-center gap-1 focus:ring-4 transition delay-150 duration-300 ease-in-out">

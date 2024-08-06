@@ -6,14 +6,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ProjectSection from "./components/ProjectSection";
-import {
-  Link,
-  Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-} from "react-scroll";
+
 const configs = {
   particles: {
     number: {
@@ -67,27 +60,6 @@ const App = () => {
   const particlesLoaded = (container) => {
     console.log(container);
   };
-
-  useEffect(() => {
-    // Registering the 'begin' event and logging it to the console when triggered.
-    Events.scrollEvent.register("begin", (to, element) => {
-      console.log("begin", to, element);
-    });
-
-    // Registering the 'end' event and logging it to the console when triggered.
-    Events.scrollEvent.register("end", (to, element) => {
-      console.log("end", to, element);
-    });
-
-    // Updating scrollSpy when the component mounts.
-    scrollSpy.update();
-
-    // Returning a cleanup function to remove the registered events when the component unmounts.
-    return () => {
-      Events.scrollEvent.remove("begin");
-      Events.scrollEvent.remove("end");
-    };
-  }, []);
 
   return (
     <div className="flex flex-1 flex-col">
@@ -170,18 +142,10 @@ const App = () => {
       )}
       <div className="absolute  w-full h-full   ">
         <Header />
-        <Element name="#home" className="element min-h-[100%] flex   ">
-          <Home />
-        </Element>
-        <Element name="#about" className="element">
-          <About />
-        </Element>
-        <Element name="#projects" className="element">
-          <ProjectSection />
-        </Element>
-        <Element name="#contact" className="element min-h-[100%] flex   ">
-          <Contact />
-        </Element>
+        <Home />
+        <About />
+        <ProjectSection />
+        <Contact />
       </div>
     </div>
   );
