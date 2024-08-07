@@ -54,6 +54,12 @@ const About = () => {
         <span className="text-[#63c8ff] text-2xl font-semibold">About me</span>
         {/* <hr className="w-[60%] my-5 bg-gray-600 text-black" /> */}
         <hr className="h-px my-4 bg-gray-400 border-0 dark:bg-gray-70 w-[60%]" />
+        <div className="flex md:justify-end items-start md:-mt-32 px-10 ">
+          <img
+            src="./assets/2.png"
+            className="w-[200px] h-[200px] rounded-[1000px] border-[2px] border-blue-500 shadow-lg shadow-[#8e8eff] inline-block blur-sm hover:blur-0"
+          />
+        </div>
 
         <div className="flex flex-1 flex-col">
           <div className="flex flex-col md:flex-row my-5">
@@ -63,11 +69,31 @@ const About = () => {
             <div className="border-0 border-blue-500 flex-[2]">
               {" "}
               <span className="text-[18px] text-white my-3">
-                I am a passionate React Native and React JS developer with a
+                {/* I am a passionate React Native and React JS developer with a
                 strong commitment to crafting high-quality, performant
                 applications. With a keen eye for detail and a focus on
                 user-centric design, I pride myself on delivering solutions that
-                not only meet client expectations but exceed them
+                not only meet client expectations but exceed them */}
+                Bio <br />
+                <div className="flex gap-5 my-2">
+                  <div>2002</div>
+                  <div>Born in Madhya Pradesh,India</div>
+                </div>
+                <div className="flex gap-5 my-2">
+                  <div>2022</div>
+                  <div>
+                    Completed the Bachelor of Technology in college of
+                    University Institute of Technology, RGPV Bhopal, India{" "}
+                  </div>
+                </div>
+                <div className="flex gap-5 my-2">
+                  <div>2022</div>
+                  <div>Worked at Codes For Tomorrow, indore,India</div>
+                </div>
+                <div className="flex gap-5 my-2">
+                  <div>2023</div>
+                  <div>to present Work at Stack Infinite, indore,India</div>
+                </div>
               </span>
             </div>
           </div>

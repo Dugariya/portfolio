@@ -22,7 +22,12 @@ const Project: React.FC<ProjectProps> = ({
       <h2 className="text-2xl font-bold text-white mb-2">{title}</h2>
       <div className="flex  gap-4 overflow-auto">
         {img.map((_img) => (
-          <img key={_img} src={`${_img}`} className="h-[300px]" alt={_img} />
+          <img
+            key={_img}
+            src={`${_img}`}
+            className="h-[300px] scale-[.9] hover:scale-[1]"
+            alt={_img}
+          />
         ))}
       </div>
       <p className="text-gray-200 mb-4 min-h-[130px] my-5">{description}</p>

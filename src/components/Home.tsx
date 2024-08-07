@@ -14,11 +14,11 @@ export let social_media_options = [
     title: "linkdin",
     link: "https://www.linkedin.com/in/pavan-dugariya/",
   },
-  {
-    icon: <MdEmail size={20} color="white" />,
-    title: "gmail",
-    link: "mailto:pawandugariya@gmail.com",
-  },
+  // {
+  //   icon: <MdEmail size={20} color="white" />,
+  //   title: "gmail",
+  //   link: "mailto:pawandugariya@gmail.com",
+  // },
 ];
 
 const Home = () => {

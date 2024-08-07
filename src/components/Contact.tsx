@@ -1,8 +1,9 @@
+import ContactForm from "./ContactForm";
 import { social_media_options } from "./Home";
 const Contact = () => {
   return (
     <div
-      className="bg-[#00000055]  min-h-[100%] flex flex-col flex-1 "
+      className="bg-[#00000055]  min-h-[100%] flex flex-col flex-1 relative"
       id="contact"
     >
       <div className="p-4 mt-[70px] md:ml-[100px]">
@@ -22,74 +23,20 @@ const Contact = () => {
               </div>
               <div className="flex text-white gap-2 items-center mt-5">
                 <a className="text-gray-400 text-[20px]">Email: </a>
-                <a className="text-white text-[16px] font-light">
+                <a className="text-white text-[16px] font-light  blur-sm hover:blur-0">
                   pawandugariya@gmail.com
                 </a>
               </div>
               <div className="flex text-white gap-2 items-center mt-3">
                 <a className="text-gray-400 text-[20px]">Phone: </a>
-                <a className="text-white text-[16px] font-light">
+                <a className="text-white text-[16px] font-light blur-sm hover:blur-0">
                   +91 8224855676
                 </a>
               </div>
               <br />
               <div className="invisible md:visible">&#8592;</div>
             </div>
-            <div className="border-2 rounded-lg border-blue-500 shadow-xl shadow-[#8e8eff] flex flex-col flex-[2]">
-              <form className=" p-6">
-                <div className="flex items-center gap-5">
-                  <div className="mb-4 flex-1">
-                    <label
-                      htmlFor="name"
-                      className="block text-white text-sm font-bold mb-2"
-                    >
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      placeholder="Your Name"
-                      className="form-input w-full border-2 border-blue-300 p-2"
-                    />
-                  </div>
-                  <div className="mb-4 flex-1">
-                    <label
-                      htmlFor="email"
-                      className="block text-white text-sm font-bold mb-2"
-                    >
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      placeholder="Your Email"
-                      className="form-input w-full border-2 border-blue-300 p-2"
-                    />
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <label
-                    htmlFor="message"
-                    className="block text-white text-sm font-bold mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    placeholder="Your Message"
-                    className="form-textarea w-full border-2 border-blue-300 p-2"
-                  ></textarea>
-                </div>
-                <div>
-                  <button
-                    type="submit"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                  >
-                    Send Me
-                  </button>
-                </div>
-              </form>
-            </div>
+            <ContactForm />
             <div className=" border-blue-700 p-2  md:hidden flex items-center justify-center flex-row gap-5 bg-[#024265] my-5 mt-[80px] ">
               <span className="text-white ">Follow Me On</span>
               {social_media_options.map((item, i) => {
@@ -107,6 +54,9 @@ const Contact = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="bg-gradient-to-r from-blue-400 via-red-500 to-indigo-400 inline-block text-transparent bg-clip-text absolute bottom-10 md:ml-[100px]">
+        Made With ❤ by Pawan Dugariya
       </div>
     </div>
   );
