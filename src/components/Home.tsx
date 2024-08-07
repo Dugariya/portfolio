@@ -1,7 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaAngleDown } from "react-icons/fa";
 import { Link } from "react-scroll";
-import { MdEmail } from "react-icons/md";
 
 export let social_media_options = [
   {

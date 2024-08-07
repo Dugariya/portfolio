@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import emailjs, { init } from "emailjs-com";
+import emailjs from "emailjs-com";
 
 type ContactFormValues = {
   name: string;
