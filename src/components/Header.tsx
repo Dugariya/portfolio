@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-
+import { motion } from "framer-motion";
 const header_options = [
   { title: "Home", link: "/" },
   { title: "About", link: "about" },
@@ -55,60 +55,65 @@ const Header = () => {
           <button
             type="button"
             onClick={() => setOpen((e) => !e)}
-            className="text-[#63c8ff] m-5"
+            className="text-[#63c8ff] m-5 "
           >
-            {/* You can use a hamburger menu icon here */}
-            {/* Menu */}
-            {/* {open ? (
-              <MdClose color="#63c8ff" size={30} />
-            ) : (
-              <CiMenuFries color="#63c8ff" size={30} />
-            )} */}
             <div
               aria-hidden="true"
-              className={`absolute h-0.5 w-5 bg-current transition duration-300 ease-in-out ${
+              className={`absolute h-0.5 w-5 z-50 bg-current transition duration-300 ease-in-out ${
                 open ? "rotate-45" : "-translate-y-1.5"
               }`}
             />
             <div
               aria-hidden="true"
-              className={`absolute h-0.5 w-5 bg-current transition duration-300 ease-in-out ${
+              className={`absolute h-0.5 w-5 z-50 bg-current transition duration-300 ease-in-out ${
                 open ? "opacity-0" : "opacity-100"
               }`}
             />
             <div
               aria-hidden="true"
-              className={`absolute h-0.5 w-5 bg-current transition duration-300 ease-in-out ${
+              className={`absolute h-0.5 w-5 z-50 bg-current transition duration-300 ease-in-out ${
                 open ? "-rotate-45" : "translate-y-1.5"
               }`}
             />
           </button>
-          <div
+          <motion.div
+            initial={{ opacity: 0, x: "100%" }}
+            animate={open ? { opacity: 1, x: 0 } : { opacity: 0, x: "100%" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className={`${
               open ? "flex" : "hidden"
-            } bg-[#0d3946] shadow-lg p-3 fixed right-0 z-10 transform delay-100 transition-all duration-300 ${
-              open ? "opacity-100 translate-x-0" : "opacity-0 -translate-y-full"
-            } flex-col`}
+            } bg-[#0d3946] shadow-lg fixed right-0 top-0 z-10 flex-col w-[70%] rounded-bl-[100%] p-10 gap-5`}
           >
-            {header_options.map((_opt, _i) => (
-              <Link
-                activeClass="active"
-                to={`${_opt.link}`}
-                spy={true}
-                smooth={true}
-                duration={700}
-                offset={0}
-                hashSpy={true}
-                key={_i}
-                // onClick={() => handleTabClick(_opt.title)}
-                className={`text-[#63c8ff] mx-1 hover:underline cursor-pointer  p-3 ${
-                  activeTab === _opt.title ? "font-bold underline " : ""
-                }`}
-              >
-                {_opt.title}
-              </Link>
-            ))}
-          </div>
+            {header_options.map((_opt, _i) => {
+              let ml = `${_i * 35}px`;
+
+              return (
+                <motion.div
+                  key={_i}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1, delay: _i * 0.5 }}
+                >
+                  <Link
+                    style={{ marginLeft: ml }}
+                    activeClass="active"
+                    to={_opt.link}
+                    spy={true}
+                    smooth={true}
+                    duration={700}
+                    offset={0}
+                    hashSpy={true}
+                    key={_i}
+                    className={`text-[#63c8ff] mx-1 hover:underline cursor-pointer p-3 ${
+                      activeTab === _opt.title ? "font-bold underline" : ""
+                    }`}
+                  >
+                    {_opt.title}
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </div>
       <div className="hidden md:flex flex-1 justify-end">
