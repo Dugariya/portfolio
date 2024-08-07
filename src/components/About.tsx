@@ -1,4 +1,6 @@
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 let skill_option = [
   {
@@ -48,6 +50,8 @@ let skill_option = [
   },
 ];
 const About = () => {
+  const constraintsRef = useRef(null);
+
   return (
     <div id="about" className="bg-[#00000055]  min-h-[100%] flex flex-col  ">
       <div className="p-4 mt-[70px] md:ml-[100px]">
@@ -112,7 +116,7 @@ const About = () => {
             </div>
           </div>
           {/* skill  */}
-          <div className="flex flex-col md:flex-row my-5">
+          <div ref={constraintsRef} className="flex flex-col md:flex-row my-5">
             <div className="border-0 border-blue-500 flex-1 text-white">
               SKILL
             </div>
@@ -120,9 +124,14 @@ const About = () => {
               <h1 className="text-white ">What I can do</h1>
               <div className="flex-1  p-2 flex flex-wrap gap-10 items-center ">
                 {skill_option.map((item, _i) => (
-                  <div
+                  <motion.div
+                    drag
+                    dragConstraints={constraintsRef}
+                    whileDrag={{ scale: 1.2 }}
+                    dragElastic={0.2}
+                    dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
                     key={_i}
-                    className="shadow-lg rounded-xl hover:scale-110 ease-in duration-300 bg-[#04375250] my-2 flex items-center gap-5 p-4 min-w-[210px] flex-1 min-h-[100px] shadow-[#63c8ff] "
+                    className="shadow-lg rounded-xl  bg-[#04375250] my-2 flex items-center gap-5 p-4 min-w-[210px] flex-1 min-h-[100px] shadow-[#63c8ff] "
                   >
                     <img
                       alt="/"
@@ -130,9 +139,10 @@ const About = () => {
                       width="78"
                       height="78"
                       src={item.img}
+                      className="select-none"
                     />
                     <div className="text-white font-semibold">{item.title}</div>
-                  </div>
+                  </motion.div>
                 ))}
                 <div className="text-white">
                   <ul className="list-disc">

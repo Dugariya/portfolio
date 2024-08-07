@@ -33,9 +33,9 @@ const Header = () => {
     };
   }, []);
   return (
-    <nav className="p-3 md:flex md:items-center fixed w-full z-50">
-      <div className="flex justify-between items-center p-2">
-        <div className="text-white  ">
+    <nav className="p-3 md:flex md:items-center fixed w-full z-[100]">
+      <div className="flex justify-between items-center p-2  ">
+        <div className="text-white ">
           <Link
             activeClass="active"
             to={`/`}

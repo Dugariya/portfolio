@@ -55,7 +55,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gradient-to-r from-blue-400 via-red-500 to-indigo-400 inline-block text-transparent bg-clip-text absolute bottom-10 md:ml-[100px]">
+      <div className="bg-gradient-to-r from-blue-400 via-red-500 to-indigo-400 inline-block text-transparent bg-clip-text absolute md:bottom-10 bottom-1 ml-4 md:ml-[100px]">
         Made With ❤ by Pawan Dugariya
       </div>
     </div>

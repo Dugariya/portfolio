@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import Header from "./components/Header";
@@ -6,11 +6,10 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ProjectSection from "./components/ProjectSection";
-// import { Engine } from "@tsparticles/engine";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const App = () => {
   const [init, setInit] = useState(false);
-  // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -18,12 +17,16 @@ const App = () => {
       setInit(true);
     });
   }, []);
-  // const particlesInit = useCallback(async (engine: Engine) => {
-  //   await loadSlim(engine);
-  // }, []);
-  // const particlesLoaded = (container) => {
-  //   console.log(container);
-  // };
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  const ref = useRef(null);
+  const { scrollXProgress } = useScroll({ container: ref });
+  console.log("scrollXProgress", scrollXProgress);
 
   return (
     <div className="flex flex-1 flex-col">
@@ -104,7 +107,12 @@ const App = () => {
           }}
         />
       )}
-      <div className="absolute  w-full h-full   ">
+      <div ref={ref} className="absolute  w-full h-full   ">
+        <motion.div
+          className="h-1 bg-[#63c8ff] shadow-lg shadow-[#63c8ff] z-[1000] fixed w-full bottom-0 "
+          style={{ scaleX }}
+        />
+
         <Header />
         <Home />
         <About />
