@@ -51,15 +51,6 @@ interface ProjectSectionProps {}
 const ProjectSection: React.FC<ProjectSectionProps> = () => {
   const projects = [
     {
-      title: "FxFort APP",
-      description:
-        "FXFort is a blockchain-powered mobile app that simplifies and secures digital transactions globally through its cryptocurrency, FXFort Coin.",
-      technologies: "React Native, React-Js, blockchain, firebase",
-      demoLink: "https://testnet.fxfort.io/",
-      githubLink: "",
-      img: ["./assets/fxfort.png"],
-    },
-    {
       title: "SasPlay APP",
       description:
         "SasPlay is a React Native project focused on gaming. It included free games, paid tournaments, and integrated payment options like Metamask and Trust Wallet. I contributed as a React Native developer, implementing front-end functionality, collaborating with the back-end team.",
@@ -83,7 +74,16 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
       img: ["./assets/eco1.jpg", "./assets/eco3.jpg", "./assets/eco4.jpg"],
     },
     {
-      title: "Free Online Plagiarism Checker for students",
+      title: "FxFort APP",
+      description:
+        "FXFort is a blockchain-powered mobile app that simplifies and secures digital transactions globally through its cryptocurrency, FXFort Coin.",
+      technologies: "React Native, React-Js, blockchain, firebase",
+      demoLink: "https://testnet.fxfort.io/",
+      githubLink: "",
+      img: ["./assets/fxfort.png"],
+    },
+    {
+      title: "Free Online Plagiarism Checker ",
       description:
         "A plagiarism detection project with a user-friendly interface that supports file uploads, provides real-time analysis with feedback in under 30 seconds, efficiently detects duplicate content across web pages and academic papers, and accurately identifies AI- generated content.",
       technologies: "Next-Js, Typescript, AI, node-js",

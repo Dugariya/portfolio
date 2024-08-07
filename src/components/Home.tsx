@@ -94,12 +94,12 @@ const Home = () => {
           </div>
         </Link>
       </div>
-      <div className="border-0 border-blue-700 flex-1 flex flex-col  justify-center items-end blur-sm hover:blur-0 hover:scale-[1] scale-[.95]">
+      <div className="border-0 border-blue-700 flex-1 flex flex-col  justify-center items-end md:blur-sm hover:blur-0 hover:scale-[1] scale-[.95]">
         <img
           alt="image"
-          // src="/bg-image1.png"
-          src="https://media.istockphoto.com/id/1142395943/photo/hacker-with-red-glowing-mask-behind-notebook-laptop-in-front-of-blue-source-binary-code.jpg?s=612x612&w=0&k=20&c=rJ4PWS4hWDXsdd6YRpaFQ4KtQtS7k_KFPSQZwgEW39I="
-          // src="/SplashScreen.png"
+          src="https://media1.tenor.com/m/P8b_SQjzVq4AAAAd/hacker-hackers.gif"
+          // src="https://media.istockphoto.com/id/1142395943/photo/hacker-with-red-glowing-mask-behind-notebook-laptop-in-front-of-blue-source-binary-code.jpg?s=612x612&w=0&k=20&c=rJ4PWS4hWDXsdd6YRpaFQ4KtQtS7k_KFPSQZwgEW39I="
+          // src="https://media1.tenor.com/m/Zp9f2I9FpFcAAAAd/anonimous-hacker.gif"
           className="w-[90%] h-[90%] object-cover self-center shadow-lg rounded-[20px] hover:shadow-[#8cc8e8ed] shadow-white"
         />
         <div className="absolute border-0 w-[90%] h-[90%] self-center flex items-end justify-center pb-16 text-[#fff] md:text-2xl font-bold   blur-[.2] text-[16px]">
