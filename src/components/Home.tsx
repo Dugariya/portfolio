@@ -26,14 +26,14 @@ const Home = () => {
       id="/"
       className="min-h-[100%] p-5 my-5 flex flex-1 md:flex-row flex-col gap-5   "
     >
-      <div className="border-0 fixed h-[70%] mt-[80px] border-blue-700 p-2 hidden md:flex items-center justify-center flex-col gap-5 bg-[#024265]">
+      <div className="border-0 fixed h-[70%] mt-[80px] border-blue-700 p-2 hidden md:flex items-center justify-center flex-col gap-5 bg-[#024265] z-50">
         {social_media_options.map((item, i) => {
           return (
             <a
               key={i}
               href={item.link}
               target="_blank"
-              rel="noopener noreferrer"
+              // rel="noopener noreferrer"
             >
               {item.icon}
             </a>
