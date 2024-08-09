@@ -32,8 +32,22 @@ const Header = () => {
       window.removeEventListener("scroll", scrollHandler);
     };
   }, []);
+
+  const [small, setSmall] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", () =>
+        setSmall(window.pageYOffset > 200)
+      );
+    }
+  }, []);
   return (
-    <nav className="p-3 md:flex md:items-center fixed w-full z-[100]">
+    <nav
+      className={`p-3 md:flex md:items-center fixed w-full z-[100] ${
+        small ? "md:bg-[#024265cd]" : ""
+      }`}
+    >
       <div className="flex justify-between items-center p-2  ">
         <div className="text-white ">
           <Link
@@ -92,7 +106,11 @@ const Header = () => {
                   key={_i}
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1, delay: _i * 0.5 }}
+                  transition={{
+                    duration: 1,
+                    delay: _i * 0.5,
+                    ease: "easeInOut",
+                  }}
                 >
                   <Link
                     style={{ marginLeft: ml }}

@@ -58,7 +58,7 @@ const About = () => {
         <span className="text-[#63c8ff] text-2xl font-semibold">About me</span>
         {/* <hr className="w-[60%] my-5 bg-gray-600 text-black" /> */}
         <hr className="h-px my-4 bg-gray-400 border-0 dark:bg-gray-70 w-[60%]" />
-        <div className="flex md:justify-end items-start md:-mt-32 px-10 ">
+        <div className="flex md:justify-end items-start md:-mt-16 px-10 ">
           <img
             src="./assets/2.png"
             className="w-[200px] h-[200px] rounded-[1000px] border-[2px] border-blue-500 shadow-lg shadow-[#8e8eff] inline-block blur-sm hover:blur-0"
@@ -116,13 +116,17 @@ const About = () => {
             </div>
           </div>
           {/* skill  */}
-          <div ref={constraintsRef} className="flex flex-col md:flex-row my-5">
+          <div className="flex flex-col md:flex-row my-5">
             <div className="border-0 border-blue-500 flex-1 text-white">
               SKILL
             </div>
             <div className="border-0 border-[#dddddd] flex-[2]">
               <h1 className="text-white ">What I can do</h1>
-              <div className="flex-1  p-2 flex flex-wrap gap-10 items-center ">
+
+              <div
+                ref={constraintsRef}
+                className="flex-1  p-2 flex flex-wrap gap-10 items-center "
+              >
                 {skill_option.map((item, _i) => (
                   <motion.div
                     drag
@@ -144,18 +148,18 @@ const About = () => {
                     <div className="text-white font-semibold">{item.title}</div>
                   </motion.div>
                 ))}
-                <div className="text-white">
-                  <ul className="list-disc">
-                    <li>Proficient in React Native and React JS development</li>
-                    <li>Cross-platform mobile application development</li>
-                    <li>Front-end web development with React JS</li>
-                    <li>
-                      UI/UX design principles for intuitive and engaging
-                      interfaces
-                    </li>
-                    <li>Responsive web design and development</li>
-                  </ul>
-                </div>
+              </div>
+              <div className="text-white">
+                <ul className="list-disc">
+                  <li>Proficient in React Native and React JS development</li>
+                  <li>Cross-platform mobile application development</li>
+                  <li>Front-end web development with React JS</li>
+                  <li>
+                    UI/UX design principles for intuitive and engaging
+                    interfaces
+                  </li>
+                  <li>Responsive web design and development</li>
+                </ul>
               </div>
             </div>
           </div>

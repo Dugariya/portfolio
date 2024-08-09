@@ -88,7 +88,7 @@ const Home = () => {
           duration={700}
           hashSpy={true}
         >
-          <div className="border-2 border-gray-500 hover:border-[#63c8ff] p-2 text-white font-light my-5 hover:cursor-pointer cursor-not-allowed opacity-50  select-none hover:bg-[#63c8ff3b]  flex items-center gap-1 focus:ring-4 transition delay-150 duration-300 ease-in-out">
+          <div className="border-2 border-gray-500 hover:border-[#63c8ff] p-2 text-white font-light my-5 hover:cursor-pointer cursor-not-allowed opacity-50  select-none hover:bg-[#024265]  flex items-center gap-1 focus:ring-4 transition delay-150 duration-300 ease-in-out">
             MORE ABOUT ME
             <FaAngleDown />
           </div>
